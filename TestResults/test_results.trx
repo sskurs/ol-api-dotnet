@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="7680ff23-dea7-4b87-93c3-a18538d778d2" name="sskur@KABILAN 2025-07-21 21:01:19" runUser="KABILAN\sskur" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-07-21T21:01:19.6658952+05:30" queuing="2025-07-21T21:01:19.6658954+05:30" start="2025-07-21T21:01:18.3962946+05:30" finish="2025-07-21T21:01:19.7468373+05:30" />
+  <TestSettings name="default" id="b4301809-c47d-4372-8418-dfbd687de0c7">
+    <Deployment runDeploymentRoot="sskur_KABILAN_2025-07-21_21_01_19" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="41659574-9e8b-45a2-a195-e524e9ca4856" testId="c0d70d1f-ab47-7686-fe54-c3df30222819" testName="GetSegment_SegmentNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0003379" startTime="2025-07-21T21:01:19.6178305+05:30" endTime="2025-07-21T21:01:19.6181681+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="41659574-9e8b-45a2-a195-e524e9ca4856">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.SegmentsControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\SegmentsControllerTests.cs:line 24&#xD;
+   at InvokeStub_SegmentsControllerTests.Setup(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b460ae40-8c50-4229-a2b9-997f4ac939e4" testId="be973d5d-c9ce-9d85-3f14-597291ccb3c9" testName="GetCustomers_ReturnsOk" computerName="KABILAN" duration="00:00:00.0028260" startTime="2025-07-21T21:01:19.5763906+05:30" endTime="2025-07-21T21:01:19.5792161+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b460ae40-8c50-4229-a2b9-997f4ac939e4">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.CustomerControllerTests.GetCustomers_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\CustomerControllerTests.cs:line 40&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="889a1576-f578-4f49-8a7a-ecb57f6fe19a" testId="3d8b2a82-bf4b-7ff5-4a5b-a415574d99d6" testName="GetSegment_SegmentFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0003560" startTime="2025-07-21T21:01:19.6174611+05:30" endTime="2025-07-21T21:01:19.6178172+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="889a1576-f578-4f49-8a7a-ecb57f6fe19a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.SegmentsControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\SegmentsControllerTests.cs:line 24&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1a256985-69db-4fa3-8dac-4c5a7eb2f964" testId="2b92279b-f271-53b3-01cd-31f2d79f693f" testName="GetMerchants_ReturnsOk" computerName="KABILAN" duration="00:00:00.0041340" startTime="2025-07-21T21:01:19.6049004+05:30" endTime="2025-07-21T21:01:19.6090333+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a256985-69db-4fa3-8dac-4c5a7eb2f964">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MerchantsControllerTests.GetMerchants_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\MerchantsControllerTests.cs:line 43&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a88d0c79-cd5f-43c3-b04b-3d9eb63aeae8" testId="ef346cb6-0c58-ed87-2bf4-c28c6e9383f4" testName="GetAdmins_ReturnsOk" computerName="KABILAN" duration="00:00:00.0086690" startTime="2025-07-21T21:01:19.5378524+05:30" endTime="2025-07-21T21:01:19.5465210+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a88d0c79-cd5f-43c3-b04b-3d9eb63aeae8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Admins&#xD;
+Non-overridable members (here: AppDbContext.get_Admins) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.AdminControllerTests.GetAdmins_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\AdminControllerTests.cs:line 40&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="55fa6443-43e9-41a6-8c5e-62809902c4d3" testId="7827ccc5-81ff-daf9-e113-7f7d4762f4f1" testName="GetCampaign_CampaignFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0059420" startTime="2025-07-21T21:01:19.5652715+05:30" endTime="2025-07-21T21:01:19.5712140+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55fa6443-43e9-41a6-8c5e-62809902c4d3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Campaigns&#xD;
+Non-overridable members (here: AppDbContext.get_Campaigns) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.CampaignControllerTests.GetCampaign_CampaignFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\CampaignControllerTests.cs:line 57&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5f485160-6727-472e-a5d3-be3fa4a21c56" testId="8b9c1dce-f096-74a5-c041-47e4556d3dfe" testName="GetUserData_UserFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0046560" startTime="2025-07-21T21:01:19.5828531+05:30" endTime="2025-07-21T21:01:19.5875084+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f485160-6727-472e-a5d3-be3fa4a21c56">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.LoyaltyControllerTests.GetUserData_UserFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\LoyaltyControllerTests.cs:line 40&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a0dda812-c102-44a5-8846-dd6aa9262896" testId="bb9afae7-85b6-d765-685c-10a0d7ec08b5" testName="GetMerchant_MerchantNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0022169" startTime="2025-07-21T21:01:19.6026569+05:30" endTime="2025-07-21T21:01:19.6048729+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0dda812-c102-44a5-8846-dd6aa9262896">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MerchantsControllerTests.GetMerchant_MerchantNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\MerchantsControllerTests.cs:line 76&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b1d417cb-931f-487a-9514-8319f3e427b8" testId="6fe91853-1b0e-ebce-84b2-b9582ac8742b" testName="GetProfile_UserFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0160040" startTime="2025-07-21T21:01:19.5485093+05:30" endTime="2025-07-21T21:01:19.5645131+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1d417cb-931f-487a-9514-8319f3e427b8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.AuthControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\AuthControllerTests.cs:line 26&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4b17e3b4-cf72-4154-a229-899bc98d0894" testId="28c360c8-c9bd-5983-1216-8e0f0f3818fb" testName="GetMerchant_MerchantFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0074290" startTime="2025-07-21T21:01:19.5952056+05:30" endTime="2025-07-21T21:01:19.6026345+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b17e3b4-cf72-4154-a229-899bc98d0894">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MerchantsControllerTests.GetMerchant_MerchantFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\MerchantsControllerTests.cs:line 60&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="984c29c1-1f86-4bb8-8bcc-17f370597098" testId="5c48253f-2b66-ac7b-9a54-b9cf9c808d82" testName="GetMember_MemberNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0016410" startTime="2025-07-21T21:01:19.5916463+05:30" endTime="2025-07-21T21:01:19.5932865+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="984c29c1-1f86-4bb8-8bcc-17f370597098">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MemberControllerTests.GetMember_MemberNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\MemberControllerTests.cs:line 71&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="32d6a8c8-5570-4d87-bd08-afacd1818eb9" testId="0e50430f-f0a0-e7bb-6b21-40ef37c76e31" testName="GetPartner_PartnerFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0035070" startTime="2025-07-21T21:01:19.6092319+05:30" endTime="2025-07-21T21:01:19.6127384+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="32d6a8c8-5570-4d87-bd08-afacd1818eb9">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.PartnersControllerTests.GetPartner_PartnerFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\PartnersControllerTests.cs:line 60&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8238776f-cf6c-4dc3-b607-b9177ab04f89" testId="2d89ec57-a594-320f-a9f8-5a37055fdb25" testName="GetCampaign_CampaignNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0020890" startTime="2025-07-21T21:01:19.5712534+05:30" endTime="2025-07-21T21:01:19.5733420+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8238776f-cf6c-4dc3-b607-b9177ab04f89">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Campaigns&#xD;
+Non-overridable members (here: AppDbContext.get_Campaigns) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.CampaignControllerTests.GetCampaign_CampaignNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\CampaignControllerTests.cs:line 73&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="742f5051-a2d8-419c-865f-9384288124aa" testId="156d47f6-7529-faa7-0db8-58a6bc67b194" testName="GetCampaigns_ReturnsOk" computerName="KABILAN" duration="00:00:00.0028200" startTime="2025-07-21T21:01:19.5733823+05:30" endTime="2025-07-21T21:01:19.5762022+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="742f5051-a2d8-419c-865f-9384288124aa">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Campaigns&#xD;
+Non-overridable members (here: AppDbContext.get_Campaigns) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.CampaignControllerTests.GetCampaigns_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\CampaignControllerTests.cs:line 40&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="01889142-b349-4f84-887f-080c6fdd526a" testId="ae246732-02ac-6c54-25ee-1886c561ef5d" testName="GetAdmin_AdminNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0061640" startTime="2025-07-21T21:01:19.5316356+05:30" endTime="2025-07-21T21:01:19.5377996+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01889142-b349-4f84-887f-080c6fdd526a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Admins&#xD;
+Non-overridable members (here: AppDbContext.get_Admins) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.AdminControllerTests.GetAdmin_AdminNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\AdminControllerTests.cs:line 71&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="34910f2c-be92-48f6-840e-ee1139d57216" testId="39c91c91-528b-f890-1632-8df4e5952722" testName="GetProfile_UserNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0005590" startTime="2025-07-21T21:01:19.5645379+05:30" endTime="2025-07-21T21:01:19.5650964+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34910f2c-be92-48f6-840e-ee1139d57216">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.AuthControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\AuthControllerTests.cs:line 26&#xD;
+   at InvokeStub_AuthControllerTests.Setup(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="79052df5-0f21-4b80-9ffe-3a6c0c1c98d4" testId="559a3561-bd40-d72a-6281-d47d59eae58c" testName="GetMember_MemberFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.0020990" startTime="2025-07-21T21:01:19.5895240+05:30" endTime="2025-07-21T21:01:19.5916224+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79052df5-0f21-4b80-9ffe-3a6c0c1c98d4">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MemberControllerTests.GetMember_MemberFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\MemberControllerTests.cs:line 56&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ed68424d-5678-43be-bf97-295bc35bf53b" testId="85727e30-46ce-4ff0-910a-47ac13deb697" testName="Create_ValidDto_ReturnsOk" computerName="KABILAN" duration="00:00:00.0016550" startTime="2025-07-21T21:01:19.6185097+05:30" endTime="2025-07-21T21:01:19.6201639+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed68424d-5678-43be-bf97-295bc35bf53b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.TransactionControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\TransactionControllerTests.cs:line 27&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="df69ffcd-8ba5-43d8-9a2b-e5a70fde0ea8" testId="065819ba-166d-8920-3f28-2f15c3dff93e" testName="GetUserData_UserNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0017630" startTime="2025-07-21T21:01:19.5875338+05:30" endTime="2025-07-21T21:01:19.5892967+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df69ffcd-8ba5-43d8-9a2b-e5a70fde0ea8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.LoyaltyControllerTests.GetUserData_UserNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\LoyaltyControllerTests.cs:line 88&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c52360fa-223a-41a2-82e8-8dad4a192aef" testId="38d6dcf7-3757-c3ed-8840-536aee33c1a0" testName="CreateRule_ValidRequest_ReturnsOk" computerName="KABILAN" duration="00:00:00.0006680" startTime="2025-07-21T21:01:19.5819991+05:30" endTime="2025-07-21T21:01:19.5826672+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c52360fa-223a-41a2-82e8-8dad4a192aef">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Services.EarningRuleEngineService.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.EarningRuleEngineServiceProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.EarningRulesControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\EarningRulesControllerTests.cs:line 29&#xD;
+   at InvokeStub_EarningRulesControllerTests.Setup(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e4485d2a-c230-4458-b1d4-7928d0b2be4a" testId="9d7aeef0-e2d9-dfa6-7eb5-4da6da160f9e" testName="GetPartners_ReturnsOk" computerName="KABILAN" duration="00:00:00.0017640" startTime="2025-07-21T21:01:19.6149207+05:30" endTime="2025-07-21T21:01:19.6166842+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4485d2a-c230-4458-b1d4-7928d0b2be4a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.PartnersControllerTests.GetPartners_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\PartnersControllerTests.cs:line 43&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8bc6ab50-ef0f-4db8-9794-9a71b8f2343d" testId="0b6a194b-7bc5-5fb0-0f1f-7c553013c605" testName="SimulatePurchase_ValidDto_ReturnsOk" computerName="KABILAN" duration="00:00:00.0006660" startTime="2025-07-21T21:01:19.6201884+05:30" endTime="2025-07-21T21:01:19.6208545+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bc6ab50-ef0f-4db8-9794-9a71b8f2343d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.TransactionControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\TransactionControllerTests.cs:line 27&#xD;
+   at InvokeStub_TransactionControllerTests.Setup(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d80aaa23-7066-4031-ae71-f92b2dab798a" testId="93a40f2e-5219-a5d4-171b-c750936a55f4" testName="CreateRule_InvalidJson_ReturnsBadRequest" computerName="KABILAN" duration="00:00:00.0025860" startTime="2025-07-21T21:01:19.5793885+05:30" endTime="2025-07-21T21:01:19.5819742+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d80aaa23-7066-4031-ae71-f92b2dab798a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Services.EarningRuleEngineService.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.EarningRuleEngineServiceProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.EarningRulesControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\EarningRulesControllerTests.cs:line 29&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="67d94cfe-2170-4d39-a0ac-5736ffd79fc0" testId="f0b9494b-0354-80dc-9ff3-0c242f38f108" testName="GetPartner_PartnerNotFound_ReturnsNotFound" computerName="KABILAN" duration="00:00:00.0021320" startTime="2025-07-21T21:01:19.6127625+05:30" endTime="2025-07-21T21:01:19.6148939+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67d94cfe-2170-4d39-a0ac-5736ffd79fc0">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Merchants&#xD;
+Non-overridable members (here: AppDbContext.get_Merchants) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.PartnersControllerTests.GetPartner_PartnerNotFound_ReturnsNotFound() in C:\development\15072025\ol-api-dotnet\Tests\PartnersControllerTests.cs:line 76&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="648a2511-9c18-42f2-9a44-722ba676e49e" testId="9cca168b-f0b6-3bed-8612-21b9ca02bf23" testName="GetAdmin_AdminFound_ReturnsOk" computerName="KABILAN" duration="00:00:00.3101960" startTime="2025-07-21T21:01:19.2202902+05:30" endTime="2025-07-21T21:01:19.5304205+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="648a2511-9c18-42f2-9a44-722ba676e49e">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Admins&#xD;
+Non-overridable members (here: AppDbContext.get_Admins) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.AdminControllerTests.GetAdmin_AdminFound_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\AdminControllerTests.cs:line 56&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4b2461ba-fd97-4024-9a35-24ed5b2bcc3c" testId="311794dc-521e-6930-3832-01c3b17bd5bc" testName="GetMembers_ReturnsOk" computerName="KABILAN" duration="00:00:00.0017470" startTime="2025-07-21T21:01:19.5933087+05:30" endTime="2025-07-21T21:01:19.5950557+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b2461ba-fd97-4024-9a35-24ed5b2bcc3c">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : Unsupported expression: db =&gt; db.Users&#xD;
+Non-overridable members (here: AppDbContext.get_Users) may not be used in setup / verification expressions.</Message>
+          <StackTrace>   at Moq.Guard.IsOverridable(MethodInfo method, Expression expression) in C:\projects\moq4\src\Moq\Guard.cs:line 99&#xD;
+   at Moq.MethodExpectation..ctor(LambdaExpression expression, MethodInfo method, IReadOnlyList`1 arguments, Boolean exactGenericTypeArguments, Boolean skipMatcherInitialization, Boolean allowNonOverridable) in C:\projects\moq4\src\Moq\MethodExpectation.cs:line 86&#xD;
+   at Moq.ExpressionExtensions.&lt;Split&gt;g__Split|5_0(Expression e, Expression&amp; r, MethodExpectation&amp; p, Boolean assignment, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 326&#xD;
+   at Moq.ExpressionExtensions.Split(LambdaExpression expression, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\ExpressionExtensions.cs:line 149&#xD;
+   at Moq.Mock.SetupRecursive[TSetup](Mock mock, LambdaExpression expression, Func`4 setupLast, Boolean allowNonOverridableLastProperty) in C:\projects\moq4\src\Moq\Mock.cs:line 643&#xD;
+   at Moq.Mock.Setup(Mock mock, LambdaExpression expression, Condition condition) in C:\projects\moq4\src\Moq\Mock.cs:line 498&#xD;
+   at Moq.Mock`1.Setup[TResult](Expression`1 expression) in C:\projects\moq4\src\Moq\Mock`1.cs:line 452&#xD;
+   at ol_api_dotnet.Tests.MemberControllerTests.GetMembers_ReturnsOk() in C:\development\15072025\ol-api-dotnet\Tests\MemberControllerTests.cs:line 40&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9a7c4649-203c-45a0-94f6-74de196296a9" testId="c82c46e9-77f1-c3dd-44ca-2d84751d9813" testName="GetRoles_ReturnsOk" computerName="KABILAN" duration="00:00:00.0004830" startTime="2025-07-21T21:01:19.6168571+05:30" endTime="2025-07-21T21:01:19.6173402+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a7c4649-203c-45a0-94f6-74de196296a9">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.RoleControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\RoleControllerTests.cs:line 24&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="22d66255-1ef2-415f-b6ed-a2c502dbe254" testId="2494361b-5800-c856-57fa-732e221646bd" testName="GetSegments_ReturnsOk" computerName="KABILAN" duration="00:00:00.0001990" startTime="2025-07-21T21:01:19.6181807+05:30" endTime="2025-07-21T21:01:19.6183796+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22d66255-1ef2-415f-b6ed-a2c502dbe254">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Can not instantiate proxy of class: ol_api_dotnet.Data.AppDbContext.&#xD;
+Could not find a parameterless constructor. (Parameter 'constructorArguments')&#xD;
+  ----&gt; System.MissingMethodException : Constructor on type 'Castle.Proxies.AppDbContextProxy' not found.</Message>
+          <StackTrace>   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)&#xD;
+   at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments) in C:\projects\moq4\src\Moq\Interception\CastleProxyFactory.cs:line 62&#xD;
+   at Moq.Mock`1.InitializeInstance() in C:\projects\moq4\src\Moq\Mock`1.cs:line 309&#xD;
+   at Moq.Mock`1.OnGetObject() in C:\projects\moq4\src\Moq\Mock`1.cs:line 323&#xD;
+   at Moq.Mock.get_Object() in C:\projects\moq4\src\Moq\Mock.cs:line 179&#xD;
+   at Moq.Mock`1.get_Object() in C:\projects\moq4\src\Moq\Mock`1.cs:line 281&#xD;
+   at ol_api_dotnet.Tests.SegmentsControllerTests.Setup() in C:\development\15072025\ol-api-dotnet\Tests\SegmentsControllerTests.cs:line 24&#xD;
+   at InvokeStub_SegmentsControllerTests.Setup(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--MissingMethodException&#xD;
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)&#xD;
+   at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="GetPartner_PartnerFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="0e50430f-f0a0-e7bb-6b21-40ef37c76e31">
+      <Execution id="32d6a8c8-5570-4d87-bd08-afacd1818eb9" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.PartnersControllerTests" name="GetPartner_PartnerFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetPartners_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="9d7aeef0-e2d9-dfa6-7eb5-4da6da160f9e">
+      <Execution id="e4485d2a-c230-4458-b1d4-7928d0b2be4a" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.PartnersControllerTests" name="GetPartners_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetProfile_UserNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="39c91c91-528b-f890-1632-8df4e5952722">
+      <Execution id="34910f2c-be92-48f6-840e-ee1139d57216" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.AuthControllerTests" name="GetProfile_UserNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetAdmins_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="ef346cb6-0c58-ed87-2bf4-c28c6e9383f4">
+      <Execution id="a88d0c79-cd5f-43c3-b04b-3d9eb63aeae8" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.AdminControllerTests" name="GetAdmins_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetMember_MemberNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="5c48253f-2b66-ac7b-9a54-b9cf9c808d82">
+      <Execution id="984c29c1-1f86-4bb8-8bcc-17f370597098" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MemberControllerTests" name="GetMember_MemberNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetCampaign_CampaignFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="7827ccc5-81ff-daf9-e113-7f7d4762f4f1">
+      <Execution id="55fa6443-43e9-41a6-8c5e-62809902c4d3" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.CampaignControllerTests" name="GetCampaign_CampaignFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetMerchant_MerchantFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="28c360c8-c9bd-5983-1216-8e0f0f3818fb">
+      <Execution id="4b17e3b4-cf72-4154-a229-899bc98d0894" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MerchantsControllerTests" name="GetMerchant_MerchantFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetMerchants_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="2b92279b-f271-53b3-01cd-31f2d79f693f">
+      <Execution id="1a256985-69db-4fa3-8dac-4c5a7eb2f964" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MerchantsControllerTests" name="GetMerchants_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="SimulatePurchase_ValidDto_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="0b6a194b-7bc5-5fb0-0f1f-7c553013c605">
+      <Execution id="8bc6ab50-ef0f-4db8-9794-9a71b8f2343d" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.TransactionControllerTests" name="SimulatePurchase_ValidDto_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="CreateRule_InvalidJson_ReturnsBadRequest" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="93a40f2e-5219-a5d4-171b-c750936a55f4">
+      <Execution id="d80aaa23-7066-4031-ae71-f92b2dab798a" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.EarningRulesControllerTests" name="CreateRule_InvalidJson_ReturnsBadRequest" />
+    </UnitTest>
+    <UnitTest name="GetSegment_SegmentNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="c0d70d1f-ab47-7686-fe54-c3df30222819">
+      <Execution id="41659574-9e8b-45a2-a195-e524e9ca4856" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.SegmentsControllerTests" name="GetSegment_SegmentNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetPartner_PartnerNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="f0b9494b-0354-80dc-9ff3-0c242f38f108">
+      <Execution id="67d94cfe-2170-4d39-a0ac-5736ffd79fc0" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.PartnersControllerTests" name="GetPartner_PartnerNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetCampaign_CampaignNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="2d89ec57-a594-320f-a9f8-5a37055fdb25">
+      <Execution id="8238776f-cf6c-4dc3-b607-b9177ab04f89" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.CampaignControllerTests" name="GetCampaign_CampaignNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetMerchant_MerchantNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="bb9afae7-85b6-d765-685c-10a0d7ec08b5">
+      <Execution id="a0dda812-c102-44a5-8846-dd6aa9262896" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MerchantsControllerTests" name="GetMerchant_MerchantNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetUserData_UserNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="065819ba-166d-8920-3f28-2f15c3dff93e">
+      <Execution id="df69ffcd-8ba5-43d8-9a2b-e5a70fde0ea8" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.LoyaltyControllerTests" name="GetUserData_UserNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetAdmin_AdminNotFound_ReturnsNotFound" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="ae246732-02ac-6c54-25ee-1886c561ef5d">
+      <Execution id="01889142-b349-4f84-887f-080c6fdd526a" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.AdminControllerTests" name="GetAdmin_AdminNotFound_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GetCustomers_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="be973d5d-c9ce-9d85-3f14-597291ccb3c9">
+      <Execution id="b460ae40-8c50-4229-a2b9-997f4ac939e4" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.CustomerControllerTests" name="GetCustomers_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetSegments_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="2494361b-5800-c856-57fa-732e221646bd">
+      <Execution id="22d66255-1ef2-415f-b6ed-a2c502dbe254" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.SegmentsControllerTests" name="GetSegments_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetAdmin_AdminFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="9cca168b-f0b6-3bed-8612-21b9ca02bf23">
+      <Execution id="648a2511-9c18-42f2-9a44-722ba676e49e" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.AdminControllerTests" name="GetAdmin_AdminFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetCampaigns_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="156d47f6-7529-faa7-0db8-58a6bc67b194">
+      <Execution id="742f5051-a2d8-419c-865f-9384288124aa" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.CampaignControllerTests" name="GetCampaigns_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetUserData_UserFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="8b9c1dce-f096-74a5-c041-47e4556d3dfe">
+      <Execution id="5f485160-6727-472e-a5d3-be3fa4a21c56" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.LoyaltyControllerTests" name="GetUserData_UserFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetRoles_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="c82c46e9-77f1-c3dd-44ca-2d84751d9813">
+      <Execution id="9a7c4649-203c-45a0-94f6-74de196296a9" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.RoleControllerTests" name="GetRoles_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="Create_ValidDto_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="85727e30-46ce-4ff0-910a-47ac13deb697">
+      <Execution id="ed68424d-5678-43be-bf97-295bc35bf53b" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.TransactionControllerTests" name="Create_ValidDto_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetMembers_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="311794dc-521e-6930-3832-01c3b17bd5bc">
+      <Execution id="4b2461ba-fd97-4024-9a35-24ed5b2bcc3c" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MemberControllerTests" name="GetMembers_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetMember_MemberFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="559a3561-bd40-d72a-6281-d47d59eae58c">
+      <Execution id="79052df5-0f21-4b80-9ffe-3a6c0c1c98d4" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.MemberControllerTests" name="GetMember_MemberFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="CreateRule_ValidRequest_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="38d6dcf7-3757-c3ed-8840-536aee33c1a0">
+      <Execution id="c52360fa-223a-41a2-82e8-8dad4a192aef" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.EarningRulesControllerTests" name="CreateRule_ValidRequest_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetProfile_UserFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="6fe91853-1b0e-ebce-84b2-b9582ac8742b">
+      <Execution id="b1d417cb-931f-487a-9514-8319f3e427b8" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.AuthControllerTests" name="GetProfile_UserFound_ReturnsOk" />
+    </UnitTest>
+    <UnitTest name="GetSegment_SegmentFound_ReturnsOk" storage="c:\development\15072025\ol-api-dotnet\bin\debug\net8.0\ol-api-dotnet.dll" id="3d8b2a82-bf4b-7ff5-4a5b-a415574d99d6">
+      <Execution id="889a1576-f578-4f49-8a7a-ecb57f6fe19a" />
+      <TestMethod codeBase="C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll" adapterTypeName="executor://nunit3testexecutor/" className="ol_api_dotnet.Tests.SegmentsControllerTests" name="GetSegment_SegmentFound_ReturnsOk" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c0d70d1f-ab47-7686-fe54-c3df30222819" executionId="41659574-9e8b-45a2-a195-e524e9ca4856" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be973d5d-c9ce-9d85-3f14-597291ccb3c9" executionId="b460ae40-8c50-4229-a2b9-997f4ac939e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d8b2a82-bf4b-7ff5-4a5b-a415574d99d6" executionId="889a1576-f578-4f49-8a7a-ecb57f6fe19a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b92279b-f271-53b3-01cd-31f2d79f693f" executionId="1a256985-69db-4fa3-8dac-4c5a7eb2f964" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef346cb6-0c58-ed87-2bf4-c28c6e9383f4" executionId="a88d0c79-cd5f-43c3-b04b-3d9eb63aeae8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7827ccc5-81ff-daf9-e113-7f7d4762f4f1" executionId="55fa6443-43e9-41a6-8c5e-62809902c4d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b9c1dce-f096-74a5-c041-47e4556d3dfe" executionId="5f485160-6727-472e-a5d3-be3fa4a21c56" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb9afae7-85b6-d765-685c-10a0d7ec08b5" executionId="a0dda812-c102-44a5-8846-dd6aa9262896" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fe91853-1b0e-ebce-84b2-b9582ac8742b" executionId="b1d417cb-931f-487a-9514-8319f3e427b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28c360c8-c9bd-5983-1216-8e0f0f3818fb" executionId="4b17e3b4-cf72-4154-a229-899bc98d0894" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5c48253f-2b66-ac7b-9a54-b9cf9c808d82" executionId="984c29c1-1f86-4bb8-8bcc-17f370597098" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0e50430f-f0a0-e7bb-6b21-40ef37c76e31" executionId="32d6a8c8-5570-4d87-bd08-afacd1818eb9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d89ec57-a594-320f-a9f8-5a37055fdb25" executionId="8238776f-cf6c-4dc3-b607-b9177ab04f89" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="156d47f6-7529-faa7-0db8-58a6bc67b194" executionId="742f5051-a2d8-419c-865f-9384288124aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae246732-02ac-6c54-25ee-1886c561ef5d" executionId="01889142-b349-4f84-887f-080c6fdd526a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39c91c91-528b-f890-1632-8df4e5952722" executionId="34910f2c-be92-48f6-840e-ee1139d57216" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="559a3561-bd40-d72a-6281-d47d59eae58c" executionId="79052df5-0f21-4b80-9ffe-3a6c0c1c98d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85727e30-46ce-4ff0-910a-47ac13deb697" executionId="ed68424d-5678-43be-bf97-295bc35bf53b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="065819ba-166d-8920-3f28-2f15c3dff93e" executionId="df69ffcd-8ba5-43d8-9a2b-e5a70fde0ea8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38d6dcf7-3757-c3ed-8840-536aee33c1a0" executionId="c52360fa-223a-41a2-82e8-8dad4a192aef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9d7aeef0-e2d9-dfa6-7eb5-4da6da160f9e" executionId="e4485d2a-c230-4458-b1d4-7928d0b2be4a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b6a194b-7bc5-5fb0-0f1f-7c553013c605" executionId="8bc6ab50-ef0f-4db8-9794-9a71b8f2343d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93a40f2e-5219-a5d4-171b-c750936a55f4" executionId="d80aaa23-7066-4031-ae71-f92b2dab798a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0b9494b-0354-80dc-9ff3-0c242f38f108" executionId="67d94cfe-2170-4d39-a0ac-5736ffd79fc0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9cca168b-f0b6-3bed-8612-21b9ca02bf23" executionId="648a2511-9c18-42f2-9a44-722ba676e49e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="311794dc-521e-6930-3832-01c3b17bd5bc" executionId="4b2461ba-fd97-4024-9a35-24ed5b2bcc3c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c82c46e9-77f1-c3dd-44ca-2d84751d9813" executionId="9a7c4649-203c-45a0-94f6-74de196296a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2494361b-5800-c856-57fa-732e221646bd" executionId="22d66255-1ef2-415f-b6ed-a2c502dbe254" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="28" executed="28" passed="0" failed="28" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.2.0.0: Test execution started&#xD;
+Running all tests in C:\development\15072025\ol-api-dotnet\bin\Debug\net8.0\ol-api-dotnet.dll&#xD;
+   NUnit3TestExecutor discovered 28 of 28 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 4.2.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

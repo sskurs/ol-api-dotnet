@@ -1,0 +1,38 @@
+### Test Transaction with 1000+ amount (should award 100 points)
+POST http://localhost:5000/api/transaction
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "amount": 1200.00,
+  "type": "purchase",
+  "date": "2024-07-20T10:00:00Z"
+}
+
+### Test Transaction with 500+ amount (should award 50 points)
+POST http://localhost:5000/api/transaction
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "amount": 750.00,
+  "type": "purchase",
+  "date": "2024-07-20T10:00:00Z"
+}
+
+### Test Transaction with 100+ amount (should award 25 points)
+POST http://localhost:5000/api/transaction
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "amount": 250.00,
+  "type": "purchase",
+  "date": "2024-07-20T10:00:00Z"
+}
+
+### Get user events
+GET http://localhost:5000/api/transaction/events?userId=1&page=1&limit=10
+
+### Get user transactions
+GET http://localhost:5000/api/transaction?userId=1&page=1&limit=10 

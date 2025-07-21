@@ -1,0 +1,91 @@
+### Test Segment API Endpoints
+
+### 1. Create a new segment
+POST http://localhost:5000/api/segments
+Content-Type: application/json
+
+{
+  "name": "Test Segment",
+  "description": "A test segment for validation",
+  "criteria": "[{\"id\":\"1\",\"field\":\"totalSpent\",\"operator\":\">=\",\"value\":\"500\"}]",
+  "memberCount": 0,
+  "status": "active",
+  "color": "#10B981"
+}
+
+### 2. Create another segment
+POST http://localhost:5000/api/segments
+Content-Type: application/json
+
+{
+  "name": "Premium Customers",
+  "description": "High-value customers with premium tier",
+  "criteria": "[{\"id\":\"1\",\"field\":\"tier\",\"operator\":\"=\",\"value\":\"premium\"}]",
+  "memberCount": 150,
+  "status": "active",
+  "color": "#8B5CF6"
+}
+
+### 3. Get all segments
+GET http://localhost:5000/api/segments
+
+### 4. Get segment by ID (replace {id} with actual ID from step 1)
+GET http://localhost:5000/api/segments/{id}
+
+### 5. Update segment (replace {id} with actual ID from step 1)
+PUT http://localhost:5000/api/segments/{id}
+Content-Type: application/json
+
+{
+  "name": "Updated Test Segment",
+  "description": "An updated test segment",
+  "criteria": "[{\"id\":\"1\",\"field\":\"totalSpent\",\"operator\":\">=\",\"value\":\"1000\"}]",
+  "memberCount": 25,
+  "status": "active",
+  "color": "#EF4444"
+}
+
+### 6. Test validation - Invalid JSON criteria
+POST http://localhost:5000/api/segments
+Content-Type: application/json
+
+{
+  "name": "Invalid Segment",
+  "description": "Segment with invalid JSON",
+  "criteria": "invalid json",
+  "memberCount": 0,
+  "status": "active",
+  "color": "#10B981"
+}
+
+### 7. Test validation - Duplicate name
+POST http://localhost:5000/api/segments
+Content-Type: application/json
+
+{
+  "name": "Test Segment",
+  "description": "Duplicate name test",
+  "criteria": "[]",
+  "memberCount": 0,
+  "status": "active",
+  "color": "#10B981"
+}
+
+### 8. Test validation - Invalid color format
+POST http://localhost:5000/api/segments
+Content-Type: application/json
+
+{
+  "name": "Invalid Color Segment",
+  "description": "Segment with invalid color",
+  "criteria": "[]",
+  "memberCount": 0,
+  "status": "active",
+  "color": "invalid-color"
+}
+
+### 9. Delete segment (replace {id} with actual ID)
+DELETE http://localhost:5000/api/segments/{id}
+
+### 10. Generate demo data
+POST http://localhost:5000/api/segments/demo 

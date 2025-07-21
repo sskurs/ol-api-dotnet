@@ -1,0 +1,25 @@
+[
+  {
+    "WorkflowName": "EarningRules",
+    "Rules": [
+      {
+        "RuleName": "HighValueTransaction1000",
+        "SuccessEvent": "Award100Points",
+        "ErrorMessage": "Transaction does not qualify for 100 points",
+        "Expression": "input1.Amount >= 1000"
+      },
+      {
+        "RuleName": "HighValueTransaction500",
+        "SuccessEvent": "Award50Points",
+        "ErrorMessage": "Transaction does not qualify for 50 points",
+        "Expression": "input1.Amount >= 500 && input1.Amount < 1000"
+      },
+      {
+        "RuleName": "MediumValueTransaction",
+        "SuccessEvent": "Award25Points",
+        "ErrorMessage": "Transaction does not qualify for 25 points",
+        "Expression": "input1.Amount >= 100 && input1.Amount < 500"
+      }
+    ]
+  }
+] 
