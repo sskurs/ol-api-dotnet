@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace ol_api_dotnet.Tests
 {
@@ -17,6 +18,7 @@ namespace ol_api_dotnet.Tests
     {
         private Mock<AppDbContext>? _mockDbContext;
         private Mock<ILogger<PartnersController>>? _mockLogger;
+        private Mock<IConfiguration>? _mockConfig;
         private PartnersController? _partnersController;
 
         [SetUp]
@@ -27,7 +29,8 @@ namespace ol_api_dotnet.Tests
                 .Options;
             _mockDbContext = new Mock<AppDbContext>(options);
             _mockLogger = new Mock<ILogger<PartnersController>>();
-            _partnersController = new PartnersController(_mockDbContext.Object, _mockLogger.Object);
+            _mockConfig = new Mock<IConfiguration>();
+            _partnersController = new PartnersController(_mockDbContext.Object, _mockLogger.Object, _mockConfig.Object);
         }
 
         [Test]

@@ -8,6 +8,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
+using MailKit.Net.Smtp;
+using MimeKit;
+using System.IO;
 
 [ApiController]
 [Route("api/admin/partners")]
@@ -16,11 +20,13 @@ public class PartnersController : ControllerBase
 {
     private readonly AppDbContext _db;
     private readonly ILogger<PartnersController> _logger;
+    private readonly IConfiguration _config;
     
-    public PartnersController(AppDbContext db, ILogger<PartnersController> logger) 
+    public PartnersController(AppDbContext db, ILogger<PartnersController> logger, IConfiguration config) 
     { 
         _db = db; 
         _logger = logger; 
+        _config = config;
     }
 
     [HttpGet]
@@ -129,6 +135,69 @@ public class PartnersController : ControllerBase
         
         _db.Merchants.Add(partner);
         await _db.SaveChangesAsync();
+
+        // Require activation for partner user
+        var activationToken = Guid.NewGuid().ToString();
+        var partnerUser = new User
+        {
+            FirstName = request.Name,
+            LastName = "Partner",
+            Email = request.Email,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
+            Role = "seller",
+            MerchantId = partner.Id,
+            Status = "active",
+            IsActive = false, // Require activation
+            ActivationToken = activationToken,
+            CreatedAt = DateTime.UtcNow
+        };
+        _db.Users.Add(partnerUser);
+        await _db.SaveChangesAsync();
+
+        try
+        {
+            // Send activation email (reuse AuthController logic)
+            var smtp = _config.GetSection("Smtp");
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("OpenLoyalty", smtp["From"] ?? "noreply@openloyalty.local"));
+            message.To.Add(new MailboxAddress(partnerUser.FirstName + " " + partnerUser.LastName, partnerUser.Email));
+            message.Subject = "Activate your OpenLoyalty Partner Account";
+            var activationLink = $"https://localhost:3000/(auth)/activate?token={Uri.EscapeDataString(partnerUser.ActivationToken ?? "")}";
+            message.Body = new TextPart("html")
+            {
+                Text = $@"
+  <div style='font-family: Arial, sans-serif; background: #f7fafc; padding: 32px;'>
+    <div style='max-width: 480px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px;'>
+      <div style='text-align: center; margin-bottom: 24px;'>
+        <img src='https://localhost:3000/logo.png' alt='OpenLoyalty' style='height: 48px; margin-bottom: 8px;' />
+        <h2 style='color: #2563eb; margin: 0;'>Welcome to OpenLoyalty!</h2>
+      </div>
+      <p style='font-size: 16px; color: #222;'>Hi <b>{partnerUser.FirstName}</b>,</p>
+      <p style='font-size: 16px; color: #222;'>Thank you for registering as a partner. Please activate your account by clicking the button below:</p>
+      <div style='text-align: center; margin: 32px 0;'>
+        <a href='{activationLink}' style='display: inline-block; background: #2563eb; color: #fff; font-weight: bold; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 18px;'>Activate Account</a>
+      </div>
+      <p style='font-size: 15px; color: #555;'>If you did not register, you can ignore this email.</p>
+      <p style='font-size: 15px; color: #555;'>Thank you,<br/>The OpenLoyalty Team</p>
+    </div>
+  </div>"
+            };
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                await client.ConnectAsync(smtp["Host"] ?? "mailhog", int.Parse(smtp["Port"] ?? "1025"), bool.Parse(smtp["EnableSsl"] ?? "false"));
+                if (!string.IsNullOrEmpty(smtp["User"]))
+                {
+                    await client.AuthenticateAsync(smtp["User"], smtp["Pass"]);
+                }
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to send activation email to partner user.");
+            // Optionally: add a warning to the response
+        }
         
         _logger.LogInformation("Partner created: {Id}", partner.Id);
         return Ok(new
@@ -148,7 +217,18 @@ public class PartnersController : ControllerBase
             partner.CommisionRate,
             partner.Status,
             partner.CreatedAt,
-            partner.UpdatedAt
+            partner.UpdatedAt,
+            user = new {
+                partnerUser.Id,
+                partnerUser.FirstName,
+                partnerUser.LastName,
+                partnerUser.Email,
+                partnerUser.Role,
+                partnerUser.MerchantId,
+                partnerUser.Status,
+                partnerUser.IsActive,
+                partnerUser.CreatedAt
+            }
         });
     }
 
